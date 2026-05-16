@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# AWS / secrets — never commit credentials
+.aws/
+*.pem
+*.key
+credentials
+.env
+*.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Local artifacts
+index.html
+*.log

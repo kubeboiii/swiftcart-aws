@@ -1,0 +1,20 @@
+{
+  "Version": "2012-10-17",
+  "Id": "PolicySNS_SQS",
+  "Statement": [
+    {
+      "Sid": "Allow-SNS-SendMessage",
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "sns.amazonaws.com"
+      },
+      "Action": "sqs:SendMessage",
+      "Resource": "arn:aws:sqs:us-west-2:YOUR_ACCOUNT_ID:OrderProcessingQueue",
+      "Condition": {
+        "ArnEquals": {
+          "aws:SourceArn": "arn:aws:sns:us-west-2:YOUR_ACCOUNT_ID:SwiftCart-Order-Fanout"
+        }
+      }
+    }
+  ]
+}

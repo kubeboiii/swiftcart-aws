@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  web_portal:
+    build: .
+    image: swiftcart-web:latest
+    container_name: swiftcart_web_container
+    ports:
+      - "80:80"
+    restart: always
+    environment:
+      - AWS_REGION=us-west-2
+      - SNS_TOPIC_ARN=arn:aws:sns:us-west-2:YOUR_ACCOUNT_ID:SwiftCart-Order-Fanout
+      - INVENTORY_API_URL=http://10.20.1.X:5000/api/v1/inventory
+    # Map AWS credentials from the host EC2 instance into the container so
+    # boto3 can utilize the IAM Instance Profile attached to the EC2.
+    volumes:
+      - ~/.aws:/root/.aws:ro
