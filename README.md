@@ -1,4 +1,4 @@
-# SwiftCart — Zero-Trust, Event-Driven Architecture on AWS
+# SwiftCart: Zero-Trust, Event-Driven Architecture on AWS
 
 A hands-on cloud engineering project that migrates a monolithic e-commerce
 backend ("SwiftCart") into a **zero-trust, event-driven, partly-serverless**
